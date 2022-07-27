@@ -1,0 +1,19 @@
+package com.springboot.app.fekuAPI.service;
+
+import com.springboot.app.fekuAPI.model.User;
+
+import java.util.List;
+
+public interface UserService {
+
+    //create - save user in Database
+    User saveUser(User user);
+
+    List<User> getUsers();
+
+    User getUserById(Long id);
+
+    User updateUser(Long id, User user);
+
+    void deleteUser(Long id);
+}
