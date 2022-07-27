@@ -14,7 +14,7 @@
 	<name>fekuAPI</name>
 	<description> Free Feku (Fake) API for Testing and Prototyping.</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
