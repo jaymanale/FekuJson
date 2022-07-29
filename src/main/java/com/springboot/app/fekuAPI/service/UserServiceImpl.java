@@ -53,4 +53,15 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
 
     }
+
+    @Override
+    public void deleteAllUserSchedulerJob() {
+        userRepository.deleteAll();
+    }
+
+    @Override
+    public void generateNewUserDataScheduler(List<User> userList) {
+        userRepository.saveAll(userList);
+    }
+
 }

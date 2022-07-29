@@ -9,7 +9,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -31,6 +30,17 @@ public class User {
 
     @Column(name = "website")
     private String website;
+
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String email, String phone, String website) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.website = website;
+    }
 
     @Override
     public boolean equals(Object o) {

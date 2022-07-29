@@ -28,7 +28,7 @@ public class PrintScheduler {
     // Scheduler to Delete and Add all user records
     // cron = "0 0 * ? * *" - To run scheduler every Hour
     // cron = "0 * * ? * *" - To run scheduler every Hour
-    @Scheduled(cron = "0 * * ? * *") // run scheduler every Hour
+    @Scheduled(cron = "0 0 * ? * *") // run scheduler every Hour
     public void UserRecordScheduler() {
         // Delete existing user records
         userService.deleteAllUserSchedulerJob();
