@@ -11,9 +11,9 @@ import java.util.Objects;
 @ToString
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Comparable<User>{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "first_name", nullable = false)
@@ -34,7 +34,8 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String phone, String website) {
+    public User(Long id,String firstName, String lastName, String email, String phone, String website) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -53,5 +54,10 @@ public class User {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return this.getId().compareTo(o.getId());
     }
 }

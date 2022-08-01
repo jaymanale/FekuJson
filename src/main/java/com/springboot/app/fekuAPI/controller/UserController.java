@@ -18,12 +18,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Save User
-    // POST : http://localhost:8080/api/v1/users
-    @PostMapping()
-    public ResponseEntity<User> saveUsers(@RequestBody User user) {
-        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
-    }
 
     // Get all USers
     // GET : http://localhost:8080/api/v1/users
@@ -44,13 +38,5 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         return new ResponseEntity<>(userService.updateUser(id, user), HttpStatus.OK);
-    }
-
-    // Delete User by ID
-    // DELETE : http://localhost:8080/api/v1/users/1
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable("id") Long id) {
-        userService.deleteUser(id);
-        return new ResponseEntity<>(String.format("Employee with ID : %s deleted successfully.", id), HttpStatus.OK);
     }
 }

@@ -10,7 +10,7 @@ public class UserData {
     public static List<User> generateUserData() {
 
         List<User> userList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i <= 10; i++) {
 
             String firstName = UtilHelper.faker().name().firstName();
             String lastName = UtilHelper.faker().name().lastName();
@@ -19,6 +19,7 @@ public class UserData {
             String website = firstName + lastName + ".com";
 
             userList.add(new User(
+                    (long) i,
                     firstName,
                     lastName,
                     email.toLowerCase(),

@@ -5,6 +5,7 @@ import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,13 +19,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-    @Override
     public List<User> getUsers() {
-        return userRepository.findAll();
+        List<User> userList = userRepository.findAll();
+        Collections.sort(userList);
+        return userList;
+
     }
 
     @Override
@@ -48,17 +47,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(Long id) {
-        getUserById(id);
-        userRepository.deleteById(id);
-
-    }
-
-    @Override
     public void deleteAllUserSchedulerJob() {
         userRepository.deleteAll();
     }
-
     @Override
     public void generateNewUserDataScheduler(List<User> userList) {
         userRepository.saveAll(userList);
