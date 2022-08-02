@@ -1,6 +1,6 @@
 package com.springboot.app.fekuAPI.service;
 
-import com.springboot.app.fekuAPI.exception.NotFoundException;
+import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.repository.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Product", "id", id));
+                .orElseThrow(() -> new ResourceNotFoundException("Product is not found with id : '"+id+"'"));
 
     }
 
