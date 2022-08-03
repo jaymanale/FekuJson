@@ -21,9 +21,9 @@ GET and PUT - HTTP methods are supported. You can use http or https for your req
 
 GET    &emsp;&emsp; &emsp;    [/products](https://fekujson.herokuapp.com/api/v1/products)
 
-GET    &emsp;&emsp;&emsp;    [/products/1](https://fekujson.herokuapp.com/api/v1/products)
+GET    &emsp;&emsp;&emsp;    [/products/1](https://fekujson.herokuapp.com/api/v1/products/1)
 
-PUT    &emsp;&emsp;&emsp;     [/products/1](https://fekujson.herokuapp.com/api/v1/products)
+PUT    &emsp;&emsp;&emsp;     /products/1
 
 ## Demo
 
@@ -35,10 +35,10 @@ Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
 
 
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](jayrammanale.com)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.jayrammanale.com/)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jayram-manale/)
 
 
-Coded and maintained with ❤️ by [@Jayram Manale](jayrammanale.com)
+Coded and maintained with ❤️ by - [@JayramManale](https://www.jayrammanale.com/)
 © 2021
