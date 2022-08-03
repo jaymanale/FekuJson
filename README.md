@@ -37,7 +37,7 @@ Request :
     .catch(err => console.error(err));
  ```
 Response :
-```yml
+```json
 [{
 	"id": 1,
 	"firstName": "Otha",
@@ -130,7 +130,7 @@ fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
 ```
 Response :
 
-```yaml
+```json
 {
 	"id": 1,
 	"productName": "Durable Iron Watch",
@@ -162,7 +162,7 @@ fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
 ```
 
 Response :
-```yaml
+```json
 {
 	"id": 1,
 	"productName": "Awesome Paper Bottle",
