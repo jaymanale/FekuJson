@@ -114,20 +114,21 @@ Response :
 GET    &emsp;&emsp;&emsp;    [/products/1](https://fekujson.herokuapp.com/api/v1/products/1)
 
 Request :
-```yaml
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-		'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-	}
+
+ ```yaml
+ const options = {
+ method: 'GET',
+ headers: {
+   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+   'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
+ }
 };
 
-fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-```
+   fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
+   .then(response => response.json())
+   .then(response => console.log(response))
+   .catch(err => console.error(err));
+ ```
 Response :
 
 ```json
@@ -176,11 +177,6 @@ Response :
 ## Demo
 
 Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
-
-## Authors
-
-- [@jayrammanale](https://github.com/jaymanale)
-
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.jayrammanale.com/)
