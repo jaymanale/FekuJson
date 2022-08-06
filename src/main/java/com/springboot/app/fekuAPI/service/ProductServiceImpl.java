@@ -47,6 +47,13 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public String deleteProduct(Long id) {
+        Product existingProduct = getProductById(id);
+        productRepository.deleteById(id);
+        return "Product with ID : " + id + " Deleted successfully.";
+    }
+
 
     // Scheduler
     @Override

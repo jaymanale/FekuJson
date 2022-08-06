@@ -7,10 +7,10 @@ import java.util.List;
 
 
 public class UserData {
-    public static List<User> generateUserData() {
+    public static List<User> generateUserData(int count) {
 
         List<User> userList = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= count; i++) {
 
             String firstName = UtilHelper.faker().name().firstName();
             String lastName = UtilHelper.faker().name().lastName();

@@ -18,4 +18,6 @@ public interface UserService {
     void deleteAllUserSchedulerJob();
 
     void generateNewUserDataScheduler(List<User> userList);
+
+    String deleteUser(Long id);
 }

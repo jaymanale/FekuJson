@@ -37,7 +37,7 @@ public class PrintScheduler {
         logger.info("deleteAllUserSchedulerJob() Scheduler run time is :: " + Calendar.getInstance().getTime());
 
         // Call UserData Util function to get all newly generated user records
-        List<User> userList = UserData.generateUserData();
+        List<User> userList = UserData.generateUserData(10);
 
         // save newly generated user records to database
         userService.generateNewUserDataScheduler(userList);
@@ -52,7 +52,7 @@ public class PrintScheduler {
         logger.info("deleteAllProductSchedulerJob() Scheduler run time is :: " + Calendar.getInstance().getTime());
 
         // Call UserData Util function to get all newly generated user records
-        List<Product> productsList = ProductData.generateProductData();
+        List<Product> productsList = ProductData.generateProductData(50);
 
         // save newly generated user records to database
         productService.generateNewProductsDataScheduler(productsList);

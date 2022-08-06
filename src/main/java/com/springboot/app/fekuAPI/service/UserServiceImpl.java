@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) {
-        return userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User is not found with id : '"+id+"'"));
+        return userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User is not found with id : '" + id + "'"));
 
     }
 
@@ -46,12 +46,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String deleteUser(Long id) {
+
+        User existingUser = getUserById(id);
+        userRepository.deleteById(id);
+        return "User with ID : " + id + " Deleted successfully.";
+    }
+
+    @Override
     public void deleteAllUserSchedulerJob() {
         userRepository.deleteAll();
     }
+
     @Override
     public void generateNewUserDataScheduler(List<User> userList) {
         userRepository.saveAll(userList);
     }
+
 
 }
