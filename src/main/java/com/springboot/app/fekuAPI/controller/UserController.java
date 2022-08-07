@@ -23,8 +23,12 @@ public class UserController {
     // Get all USers
     // GET : http://localhost:8080/api/v1/users
     @GetMapping()
-    public ResponseEntity<List<User>> getUsers() {
-        return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
+    public ResponseEntity<List<User>> getUsers(
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize
+
+    ) {
+        return new ResponseEntity<>(userService.getUsers(pageNumber, pageSize), HttpStatus.OK);
     }
 
     // Get User by ID
@@ -43,7 +47,7 @@ public class UserController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<SingleMessage> deleteUser(@PathVariable("id") Long id) {
-          return new ResponseEntity<>(userService.deleteUser(id),HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(userService.deleteUser(id), HttpStatus.NOT_FOUND);
     }
 
 }

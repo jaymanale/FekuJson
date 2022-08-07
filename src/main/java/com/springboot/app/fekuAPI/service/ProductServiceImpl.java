@@ -4,6 +4,9 @@ import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.repository.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -19,10 +22,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts() {
-        List<Product> productList = productRepository.findAll();
-        Collections.sort(productList);
-        return productList;
+    public List<Product> getProducts(Integer pageNumber, Integer pageSize) {
+
+        Pageable pageObj = PageRequest.of(pageNumber, pageSize);
+        Page<Product> pageableProduct = productRepository.findAll(pageObj);
+        return pageableProduct.getContent();
     }
 
 
@@ -52,7 +56,7 @@ public class ProductServiceImpl implements ProductService {
     public SingleMessage deleteProduct(Long id) {
         getProductById(id);
         productRepository.deleteById(id);
-        return new SingleMessage("Product with ID : "+ id + " Deleted Successfully.");
+        return new SingleMessage("Product with ID : " + id + " Deleted Successfully.");
     }
 
 

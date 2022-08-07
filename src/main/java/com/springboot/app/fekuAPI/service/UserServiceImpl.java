@@ -4,9 +4,11 @@ import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -19,10 +21,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUsers() {
-        List<User> userList = userRepository.findAll();
-        Collections.sort(userList);
-        return userList;
+    public List<User> getUsers(Integer pageNumber, Integer pageSize) {
+
+        Pageable pageObj = PageRequest.of(pageNumber, pageSize);
+        Page<User> pageableUser = userRepository.findAll(pageObj);
+        return pageableUser.getContent();
+
 
     }
 
@@ -51,7 +55,7 @@ public class UserServiceImpl implements UserService {
 
         getUserById(id);
         userRepository.deleteById(id);
-        return new SingleMessage("User with ID : "+ id + " Deleted Successfully.");
+        return new SingleMessage("User with ID : " + id + " Deleted Successfully.");
     }
 
     @Override

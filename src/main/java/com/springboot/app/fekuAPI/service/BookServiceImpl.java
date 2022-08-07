@@ -4,6 +4,10 @@ import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
 import com.springboot.app.fekuAPI.model.Book;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.repository.BookRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,8 +34,12 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBooks() {
-        return bookRepository.findAll();
+    public List<Book> getBooks(Integer pageNumber, Integer pageSize) {
+
+     Pageable pageObject =  PageRequest.of(pageNumber, pageSize);
+        Page<Book> pageableBook = bookRepository.findAll(pageObject);
+        return pageableBook.getContent();
+
     }
 
     @Override

@@ -20,8 +20,11 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Book>> getBooks() {
-        return new ResponseEntity<List<Book>>(bookService.getBooks(), HttpStatus.OK);
+    public ResponseEntity<List<Book>> getBooks(
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize
+    ) {
+        return new ResponseEntity<List<Book>>(bookService.getBooks(pageNumber, pageSize), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

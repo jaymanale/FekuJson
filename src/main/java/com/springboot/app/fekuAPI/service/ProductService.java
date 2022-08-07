@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService {
 
 
-    List<Product> getProducts();
+    List<Product> getProducts(Integer pageNumber, Integer pageSize);
 
     void deleteAllProductSchedulerJob();
 

@@ -20,8 +20,12 @@ public class ProductController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Product>> getProducts() {
-        return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize
+
+    ) {
+        return new ResponseEntity<>(productService.getProducts(pageNumber, pageSize), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

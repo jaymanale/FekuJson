@@ -10,7 +10,7 @@ public interface BookService {
 
     void generateNewBookDataScheduler(List<Book> booksList);
 
-    List<Book> getBooks();
+    List<Book> getBooks(Integer pageNumber, Integer pageSize);
 
     Book getBookById(Long id);
 

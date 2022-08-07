@@ -9,7 +9,7 @@ public interface UserService {
 
     //create - save user in Database
 
-    List<User> getUsers();
+    List<User> getUsers(Integer pageNumber, Integer pageSize);
 
     User getUserById(Long id);
 
