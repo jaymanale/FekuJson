@@ -23,8 +23,17 @@ Feku Json comes with a set of 2 resources:
 
 [/books](https://rapidapi.com/jaymanale29/api/feku-json1) - 100 books
 
+## Parameters
+
+| First Header (Optional) | Second Header                                            |
+|-------------------------|----------------------------------------------------------|
+| `pageNumber`            | specify the current page [ default `0` ]                 |
+| `pageSize`              | results per page [ default `10` per page ]               |
+| `sortBy`                | sort results by a certain field [ default `'id'` field ] |
+| `sortDir`               | set the sort order to `asc` or `desc`  [default asc]     |
+
 ## Routes
-GET and PUT - HTTP methods are supported. You can use http or https for your requests.
+All HTTP methods are supported. You can use http or https for your requests.
 
 1. GET    &emsp;&emsp; &emsp;    [/products](https://fekujson.herokuapp.com/api/v1/products)
 
@@ -45,77 +54,105 @@ GET and PUT - HTTP methods are supported. You can use http or https for your req
      ```
     Response :
     ```json
-    [{
-        "id": 1,
-        "firstName": "Otha",
-        "lastName": "Conn",
-        "email": "othaconn@gmail.com",
-        "phone": "351.780.8291 x741",
-        "website": "othaconn.com"
-    }, {
-        "id": 2,
-        "firstName": "Tobias",
-        "lastName": "Effertz",
-        "email": "tobiaseffertz@gmail.com",
-        "phone": "(076) 299-7527 x131",
-        "website": "tobiaseffertz.com"
-    }, {
-        "id": 3,
-        "firstName": "Louann",
-        "lastName": "Fisher",
-        "email": "louannfisher@gmail.com",
-        "phone": "1-439-984-8248 x68577",
-        "website": "louannfisher.com"
-    }, {
-        "id": 4,
-        "firstName": "Vincenzo",
-        "lastName": "Reilly",
-        "email": "vincenzoreilly@gmail.com",
-        "phone": "909.740.4064",
-        "website": "vincenzoreilly.com"
-    }, {
-        "id": 5,
-        "firstName": "Chase",
-        "lastName": "Witting",
-        "email": "chasewitting@gmail.com",
-        "phone": "968.941.2800 x35809",
-        "website": "chasewitting.com"
-    }, {
-        "id": 6,
-        "firstName": "Krystyna",
-        "lastName": "Lebsack",
-        "email": "krystynalebsack@gmail.com",
-        "phone": "(919) 567-5609",
-        "website": "krystynalebsack.com"
-    }, {
-        "id": 7,
-        "firstName": "Season",
-        "lastName": "Schamberger",
-        "email": "seasonschamberger@gmail.com",
-        "phone": "754.128.6010 x566",
-        "website": "seasonschamberger.com"
-    }, {
-        "id": 8,
-        "firstName": "Felton",
-        "lastName": "Kub",
-        "email": "feltonkub@gmail.com",
-        "phone": "(260) 473-5031",
-        "website": "feltonkub.com"
-    }, {
-        "id": 9,
-        "firstName": "Yaeko",
-        "lastName": "Hessel",
-        "email": "yaekohessel@gmail.com",
-        "phone": "245-412-6773 x3036",
-        "website": "yaekohessel.com"
-    }, {
-        "id": 10,
-        "firstName": "Susana",
-        "lastName": "O'Connell",
-        "email": "susanao'connell@gmail.com",
-        "phone": "039.163.6571 x6062",
-        "website": "susanao'connell.com"
-    }]
+      {
+    "content": [
+        {
+            "id": 1,
+            "productName": "Intelligent Iron Hat",
+            "material": "Marble",
+            "price": "91.46",
+            "department": "Home, Movies & Sports",
+            "color": "yellow",
+            "promotionCode": "SpecialSavings420226"
+        },
+        {
+            "id": 2,
+            "productName": "Durable Linen Bag",
+            "material": "Silk",
+            "price": "27.32",
+            "department": "Sports",
+            "color": "maroon",
+            "promotionCode": "AmazingSavings810673"
+        },
+        {
+            "id": 3,
+            "productName": "Incredible Iron Bottle",
+            "material": "Wool",
+            "price": "74.80",
+            "department": "Movies, Music & Toys",
+            "color": "sky blue",
+            "promotionCode": "CoolPromotion107804"
+        },
+        {
+            "id": 4,
+            "productName": "Awesome Bronze Watch",
+            "material": "Leather",
+            "price": "12.54",
+            "department": "Computers & Jewelry",
+            "color": "maroon",
+            "promotionCode": "IncrediblePromo545273"
+        },
+        {
+            "id": 5,
+            "productName": "Fantastic Cotton Lamp",
+            "material": "Linen",
+            "price": "14.43",
+            "department": "Games",
+            "color": "azure",
+            "promotionCode": "KillerCode065452"
+        },
+        {
+            "id": 6,
+            "productName": "Sleek Rubber Lamp",
+            "material": "Aluminum",
+            "price": "82.63",
+            "department": "Industrial",
+            "color": "sky blue",
+            "promotionCode": "SpecialCode776047"
+        },
+        {
+            "id": 7,
+            "productName": "Awesome Granite Shoes",
+            "material": "Granite",
+            "price": "77.23",
+            "department": "Electronics & Outdoors",
+            "color": "olive",
+            "promotionCode": "SweetPrice205512"
+        },
+        {
+            "id": 8,
+            "productName": "Heavy Duty Wooden Wallet",
+            "material": "Rubber",
+            "price": "72.35",
+            "department": "Games",
+            "color": "sky blue",
+            "promotionCode": "SpecialPromotion627361"
+        },
+        {
+            "id": 9,
+            "productName": "Durable Granite Wallet",
+            "material": "Linen",
+            "price": "28.02",
+            "department": "Baby & Health",
+            "color": "tan",
+            "promotionCode": "PremiumSale626165"
+        },
+        {
+            "id": 10,
+            "productName": "Awesome Plastic Clock",
+            "material": "Copper",
+            "price": "55.85",
+            "department": "Computers",
+            "color": "silver",
+            "promotionCode": "AwesomeSale344693"
+        }
+    ],
+    "pageNumber": 0,
+    "pageSize": 10,
+    "totalElements": 50,
+    "totalPages": 5,
+    "lastPage": false
+   }
     ```
 
 2. GET    &emsp;&emsp;&emsp;    [/products/1](https://fekujson.herokuapp.com/api/v1/products/1)
@@ -213,6 +250,91 @@ GET and PUT - HTTP methods are supported. You can use http or https for your req
     {
       "message":"Product with ID : 5 Deleted Successfully."  
     }
+    ```
+
+5. GET (With Parameters)   &emsp;&emsp;&emsp;     /products/
+  
+   Request :
+
+   ```yaml
+   const axios = require("axios");
+
+   const options = {
+   method: 'GET',
+   url: 'https://feku-json1.p.rapidapi.com/api/v1/products',
+   params: {pageNumber: '0', pageSize: '5', sortBy: 'id', sortDir: 'asc'},
+   headers: {
+   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+   'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
+   }
+   };
+   
+   axios.request(options).then(function (response) {
+   console.log(response.data);
+   }).catch(function (error) {
+   console.error(error);
+   });
+  
+   ```
+   Response :
+
+    ```json
+    
+      {
+    "content": [
+        {
+            "id": 1,
+            "productName": "Intelligent Iron Hat",
+            "material": "Marble",
+            "price": "91.46",
+            "department": "Home, Movies & Sports",
+            "color": "yellow",
+            "promotionCode": "SpecialSavings420226"
+        },
+        {
+            "id": 2,
+            "productName": "Durable Linen Bag",
+            "material": "Silk",
+            "price": "27.32",
+            "department": "Sports",
+            "color": "maroon",
+            "promotionCode": "AmazingSavings810673"
+        },
+        {
+            "id": 3,
+            "productName": "Incredible Iron Bottle",
+            "material": "Wool",
+            "price": "74.80",
+            "department": "Movies, Music & Toys",
+            "color": "sky blue",
+            "promotionCode": "CoolPromotion107804"
+        },
+        {
+            "id": 4,
+            "productName": "Awesome Bronze Watch",
+            "material": "Leather",
+            "price": "12.54",
+            "department": "Computers & Jewelry",
+            "color": "maroon",
+            "promotionCode": "IncrediblePromo545273"
+        },
+        {
+            "id": 5,
+            "productName": "Fantastic Cotton Lamp",
+            "material": "Linen",
+            "price": "14.43",
+            "department": "Games",
+            "color": "azure",
+            "promotionCode": "KillerCode065452"
+        }
+    ],
+    "pageNumber": 0,
+    "pageSize": 5,
+    "totalElements": 50,
+    "totalPages": 10,
+    "lastPage": false
+   }
+    
     ```
 
 ###
