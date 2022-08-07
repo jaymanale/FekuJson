@@ -11,7 +11,7 @@ public interface BookService {
 
     void generateNewBookDataScheduler(List<Book> booksList);
 
-    PostResponse<Book> getBooks(Integer pageNumber, Integer pageSize);
+    PostResponse<Book> getBooks(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     Book getBookById(Long id);
 

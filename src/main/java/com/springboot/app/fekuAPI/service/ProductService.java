@@ -9,7 +9,7 @@ import java.util.List;
 public interface ProductService {
 
 
-    PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize);
+    PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     void deleteAllProductSchedulerJob();
 

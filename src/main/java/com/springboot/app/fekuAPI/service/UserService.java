@@ -10,7 +10,7 @@ public interface UserService {
 
     //create - save user in Database
 
-    PostResponse<User> getUsers(Integer pageNumber, Integer pageSize);
+    PostResponse<User> getUsers(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     User getUserById(Long id);
 

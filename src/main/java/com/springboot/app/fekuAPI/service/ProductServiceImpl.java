@@ -9,6 +9,7 @@ import com.springboot.app.fekuAPI.util.UtilHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,9 +24,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize) {
+    public PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 
-        Pageable pageObj = PageRequest.of(pageNumber, pageSize);
+        Sort sort = UtilHelper.getSortOrders(sortBy, sortDir);
+        Pageable pageObj = PageRequest.of(pageNumber, pageSize,sort);
         Page<Product> pageableProduct = productRepository.findAll(pageObj);
         return UtilHelper.preparePostResponse(pageableProduct);
 

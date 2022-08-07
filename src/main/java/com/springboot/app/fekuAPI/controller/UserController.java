@@ -24,10 +24,12 @@ public class UserController {
     @GetMapping()
     public ResponseEntity<PostResponse<User>> getUsers(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize,
+            @RequestParam(value = "sortBy", defaultValue="id", required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir
 
     ) {
-        return new ResponseEntity<>(userService.getUsers(pageNumber, pageSize), HttpStatus.OK);
+        return new ResponseEntity<>(userService.getUsers(pageNumber, pageSize, sortBy, sortDir), HttpStatus.OK);
     }
 
     // Get User by ID

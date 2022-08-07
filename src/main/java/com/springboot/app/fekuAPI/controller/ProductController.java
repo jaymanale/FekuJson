@@ -21,10 +21,12 @@ public class ProductController {
     @GetMapping()
     public ResponseEntity<PostResponse<Product>> getProducts(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize
+            @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize,
+            @RequestParam(value = "sortBy", defaultValue="id", required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir
 
     ) {
-        return new ResponseEntity<>(productService.getProducts(pageNumber, pageSize), HttpStatus.OK);
+        return new ResponseEntity<>(productService.getProducts(pageNumber, pageSize,sortBy,sortDir), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
