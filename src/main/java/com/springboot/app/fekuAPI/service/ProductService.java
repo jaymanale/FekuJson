@@ -1,6 +1,7 @@
 package com.springboot.app.fekuAPI.service;
 
 import com.springboot.app.fekuAPI.model.Product;
+import com.springboot.app.fekuAPI.model.SingleMessage;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface ProductService {
 
     Product updateProductById(Long id, Product product);
 
-    String deleteProduct(Long id);
+    SingleMessage deleteProduct(Long id);
 }

@@ -1,6 +1,7 @@
 package com.springboot.app.fekuAPI.service;
 
 import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
+import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -46,11 +47,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String deleteUser(Long id) {
+    public SingleMessage deleteUser(Long id) {
 
-        User existingUser = getUserById(id);
+        getUserById(id);
         userRepository.deleteById(id);
-        return "User with ID : " + id + " Deleted successfully.";
+        return new SingleMessage("User with ID : "+ id + " Deleted Successfully.");
     }
 
     @Override

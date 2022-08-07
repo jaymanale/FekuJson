@@ -1,5 +1,6 @@
 package com.springboot.app.fekuAPI.controller;
 
+import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -41,8 +42,8 @@ public class UserController {
     }
 
     @DeleteMapping("{id}")
-    public String deleteUser(@PathVariable("id") Long id){
-        return userService.deleteUser(id);
+    public ResponseEntity<SingleMessage> deleteUser(@PathVariable("id") Long id) {
+          return new ResponseEntity<>(userService.deleteUser(id),HttpStatus.NOT_FOUND);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.springboot.app.fekuAPI.service;
 
+import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 
 import java.util.List;
@@ -19,5 +20,5 @@ public interface UserService {
 
     void generateNewUserDataScheduler(List<User> userList);
 
-    String deleteUser(Long id);
+    SingleMessage deleteUser(Long id);
 }
