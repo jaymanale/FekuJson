@@ -175,15 +175,42 @@ GET and PUT - HTTP methods are supported. You can use http or https for your req
         "promotionCode": "GoodPromo368049"
     }
     ```
+
+
+4. DELETE    &emsp;&emsp;&emsp;     /products/1
+
+      Request :
+
+    ```yaml
+   const axios = require("axios");
+   
+   const options = {
+   method: 'DELETE',
+   url: 'https://feku-json1.p.rapidapi.com/api/v1/products/1',
+   headers: {
+   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+   'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
+   }
+   };
+   
+   axios.request(options).then(function (response) {
+   console.log(response.data);
+   }).catch(function (error) {
+   console.error(error);
+   });
+    ```
+
+   Response :
+
+    ```json
+    {
+      "message":"Product with ID : 5 Deleted Successfully."  
+    }
+    ```
 ## Demo
 
 Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
 
-## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.jayrammanale.com/)
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jayram-manale/)
-
-##
+###
 Coded and maintained with ❤️ by - [@JayramManale](https://www.jayrammanale.com/)
 © 2022
