@@ -1,13 +1,12 @@
 package com.springboot.app.fekuAPI.controller;
 
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -20,7 +19,7 @@ public class ProductController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Product>> getProducts(
+    public ResponseEntity<PostResponse<Product>> getProducts(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize
 

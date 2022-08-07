@@ -1,5 +1,6 @@
 package com.springboot.app.fekuAPI.service;
 
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 
@@ -8,7 +9,7 @@ import java.util.List;
 public interface ProductService {
 
 
-    List<Product> getProducts(Integer pageNumber, Integer pageSize);
+    PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize);
 
     void deleteAllProductSchedulerJob();
 

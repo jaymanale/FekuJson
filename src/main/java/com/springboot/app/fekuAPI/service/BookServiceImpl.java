@@ -2,12 +2,13 @@ package com.springboot.app.fekuAPI.service;
 
 import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
 import com.springboot.app.fekuAPI.model.Book;
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.repository.BookRepository;
+import com.springboot.app.fekuAPI.util.UtilHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,11 +35,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBooks(Integer pageNumber, Integer pageSize) {
+    public PostResponse<Book> getBooks(Integer pageNumber, Integer pageSize) {
 
-     Pageable pageObject =  PageRequest.of(pageNumber, pageSize);
+        Pageable pageObject = PageRequest.of(pageNumber, pageSize);
         Page<Book> pageableBook = bookRepository.findAll(pageObject);
-        return pageableBook.getContent();
+        return UtilHelper.preparePostResponse(pageableBook);
 
     }
 

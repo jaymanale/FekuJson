@@ -1,13 +1,12 @@
 package com.springboot.app.fekuAPI.controller;
 
 import com.springboot.app.fekuAPI.model.Book;
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.service.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -20,11 +19,11 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Book>> getBooks(
+    public ResponseEntity<PostResponse<Book>> getBooks(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize", defaultValue = "10", required =  false) Integer pageSize
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize
     ) {
-        return new ResponseEntity<List<Book>>(bookService.getBooks(pageNumber, pageSize), HttpStatus.OK);
+        return new ResponseEntity<>(bookService.getBooks(pageNumber, pageSize), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

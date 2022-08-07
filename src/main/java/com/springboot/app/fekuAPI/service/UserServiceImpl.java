@@ -1,9 +1,11 @@
 package com.springboot.app.fekuAPI.service;
 
 import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.repository.UserRepository;
+import com.springboot.app.fekuAPI.util.UtilHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -21,13 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUsers(Integer pageNumber, Integer pageSize) {
+    public PostResponse<User> getUsers(Integer pageNumber, Integer pageSize) {
 
         Pageable pageObj = PageRequest.of(pageNumber, pageSize);
         Page<User> pageableUser = userRepository.findAll(pageObj);
-        return pageableUser.getContent();
-
-
+        return UtilHelper.preparePostResponse(pageableUser);
     }
 
     @Override

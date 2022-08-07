@@ -1,5 +1,6 @@
 package com.springboot.app.fekuAPI.service;
 
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 
@@ -9,7 +10,7 @@ public interface UserService {
 
     //create - save user in Database
 
-    List<User> getUsers(Integer pageNumber, Integer pageSize);
+    PostResponse<User> getUsers(Integer pageNumber, Integer pageSize);
 
     User getUserById(Long id);
 

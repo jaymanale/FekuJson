@@ -1,15 +1,16 @@
 package com.springboot.app.fekuAPI.service;
 
 import com.springboot.app.fekuAPI.exception.ResourceNotFoundException;
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.repository.ProductRepository;
+import com.springboot.app.fekuAPI.util.UtilHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -22,11 +23,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts(Integer pageNumber, Integer pageSize) {
+    public PostResponse<Product> getProducts(Integer pageNumber, Integer pageSize) {
 
         Pageable pageObj = PageRequest.of(pageNumber, pageSize);
         Page<Product> pageableProduct = productRepository.findAll(pageObj);
-        return pageableProduct.getContent();
+        return UtilHelper.preparePostResponse(pageableProduct);
+
     }
 
 

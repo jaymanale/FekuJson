@@ -1,13 +1,12 @@
 package com.springboot.app.fekuAPI.controller;
 
+import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
 import com.springboot.app.fekuAPI.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -23,7 +22,7 @@ public class UserController {
     // Get all USers
     // GET : http://localhost:8080/api/v1/users
     @GetMapping()
-    public ResponseEntity<List<User>> getUsers(
+    public ResponseEntity<PostResponse<User>> getUsers(
             @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize
 
