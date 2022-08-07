@@ -9,6 +9,11 @@ Free Simple fake API for Testing and Prototyping.
 ## When to use
 Feku Json is a free online REST API that you can use whenever you need some fake data to test things locally.
 
+## Demo
+
+Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
+
+
 ## Resources
 Feku Json comes with a set of 2 resources:
 
@@ -207,9 +212,6 @@ GET and PUT - HTTP methods are supported. You can use http or https for your req
       "message":"Product with ID : 5 Deleted Successfully."  
     }
     ```
-## Demo
-
-Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
 
 ###
 Coded and maintained with ❤️ by - [@JayramManale](https://www.jayrammanale.com/)
