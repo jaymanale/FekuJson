@@ -19,7 +19,9 @@ Feku Json comes with a set of 2 resources:
 
 [/users](https://rapidapi.com/jaymanale29/api/feku-json1) - 10 users
 
-[/products](https://rapidapi.com/jaymanale29/api/feku-json1) - 50 users
+[/products](https://rapidapi.com/jaymanale29/api/feku-json1) - 50 Products
+
+[/books](https://rapidapi.com/jaymanale29/api/feku-json1) - 100 books
 
 ## Routes
 GET and PUT - HTTP methods are supported. You can use http or https for your requests.

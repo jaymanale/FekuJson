@@ -1,9 +1,12 @@
 package com.springboot.app.fekuAPI.scheduler;
 
+import com.springboot.app.fekuAPI.data.BookData;
 import com.springboot.app.fekuAPI.data.ProductData;
 import com.springboot.app.fekuAPI.data.UserData;
+import com.springboot.app.fekuAPI.model.Book;
 import com.springboot.app.fekuAPI.model.Product;
 import com.springboot.app.fekuAPI.model.User;
+import com.springboot.app.fekuAPI.service.BookService;
 import com.springboot.app.fekuAPI.service.ProductService;
 import com.springboot.app.fekuAPI.service.UserService;
 import org.slf4j.Logger;
@@ -21,10 +24,14 @@ public class PrintScheduler {
     private final UserService userService;
     private final ProductService productService;
 
-    public PrintScheduler(UserService userService, ProductService productService) {
+    private final BookService bookService;
+
+
+    public PrintScheduler(UserService userService, ProductService productService, BookService bookService) {
 
         this.userService = userService;
         this.productService = productService;
+        this.bookService = bookService;
     }
 
     // Scheduler to Delete and Add all user records
@@ -57,6 +64,22 @@ public class PrintScheduler {
         // save newly generated user records to database
         productService.generateNewProductsDataScheduler(productsList);
         logger.info("generateNewProductsDataScheduler() Scheduler run time is :: " + Calendar.getInstance().getTime());
+
+    }
+
+
+    @Scheduled(cron = "0 0 * ? * *") // run scheduler every Hour
+    public void BookRecordScheduler() {
+        // Delete existing user records
+        bookService.deleteAllBookSchedulerJob();
+        logger.info("deleteAllBookSchedulerJob() Scheduler run time is :: " + Calendar.getInstance().getTime());
+
+        // Call UserData Util function to get all newly generated user records
+        List<Book> booksList = BookData.generateBookData(100);
+
+        // save newly generated user records to database
+        bookService.generateNewBookDataScheduler(booksList);
+        logger.info("generateNewBookDataScheduler() Scheduler run time is :: " + Calendar.getInstance().getTime());
 
     }
 
