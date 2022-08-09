@@ -1,5 +1,6 @@
 package com.springboot.app.fekuAPI.controller;
 
+import com.springboot.app.fekuAPI.constants.Constants;
 import com.springboot.app.fekuAPI.model.PostResponse;
 import com.springboot.app.fekuAPI.model.SingleMessage;
 import com.springboot.app.fekuAPI.model.User;
@@ -23,10 +24,10 @@ public class UserController {
     // GET : http://localhost:8080/api/v1/users
     @GetMapping()
     public ResponseEntity<PostResponse<User>> getUsers(
-            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize", defaultValue = "10", required = false) Integer pageSize,
-            @RequestParam(value = "sortBy", defaultValue="id", required = false) String sortBy,
-            @RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir
+            @RequestParam(value = "pageNumber", defaultValue = Constants.PAGE_NUMBER, required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = Constants.PAGE_SIZE, required = false) Integer pageSize,
+            @RequestParam(value = "sortBy", defaultValue = Constants.SORT_BY, required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = Constants.SORT_DIRECTION, required = false) String sortDir
 
     ) {
         return new ResponseEntity<>(userService.getUsers(pageNumber, pageSize, sortBy, sortDir), HttpStatus.OK);
