@@ -38,7 +38,7 @@ All HTTP methods are supported. You can use http or https for your requests.
 1. GET    &emsp;&emsp; &emsp;    [/products](https://documenter.getpostman.com/view/305770/2s93eSabYH#47ad5018-e3d7-45f8-ba43-ef08f7694835)
 
     Request :
-     ```ecmascript 6
+     ```yaml
      var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -156,7 +156,7 @@ All HTTP methods are supported. You can use http or https for your requests.
 
     Request :
     
-     ```ecmascript 6
+     ```yaml
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -184,7 +184,7 @@ All HTTP methods are supported. You can use http or https for your requests.
 3. PUT    &emsp;&emsp;&emsp;     [/products/1](https://documenter.getpostman.com/view/305770/2s93eSabYH#30669c92-cb42-41b7-bf90-7625824432de)
 
     Request :
-    ```ecmascript 6
+    ```yaml
     var raw = "{\r\n    \"productName\": \"Awesome Paper Bottle\",\r\n    \"material\": \"wool\",\r\n    \"price\": \"43.72\",\r\n    \"department\": \"Baby, Kids & Music\",\r\n    \"color\": \"blue\",\r\n    \"promotionCode\": \"GoodPromo368049\"\r\n}";
 
    var requestOptions = {
@@ -217,7 +217,7 @@ All HTTP methods are supported. You can use http or https for your requests.
 
       Request :
 
-    ```ecmascript 6
+    ```yaml
    var requestOptions = {
       method: 'DELETE',
       redirect: 'follow'
@@ -241,7 +241,7 @@ All HTTP methods are supported. You can use http or https for your requests.
   
    Request :
 
-   ```ecmascript 6
+   ```yaml
    var requestOptions = {
        method: 'GET',
        redirect: 'follow'
