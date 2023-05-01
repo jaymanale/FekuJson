@@ -42,7 +42,7 @@ All HTTP methods are supported. You can use http or https for your requests.
      const options = {
         method: 'GET',
         headers: {
-        'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+        'X-RapidAPI-Key': 'YOUR_API_KEY',
         'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
     }
     };
@@ -163,7 +163,7 @@ All HTTP methods are supported. You can use http or https for your requests.
      const options = {
      method: 'GET',
      headers: {
-       'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+       'X-RapidAPI-Key': 'YOUR_API_KEY',
        'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
      }
     };
@@ -195,7 +195,7 @@ All HTTP methods are supported. You can use http or https for your requests.
      method: 'PUT',
      headers: {
        'content-type': 'application/json',
-       'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+       'X-RapidAPI-Key': 'YOUR_API_KEY',
        'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
      },
      body: '{"productName":"Awesome Paper Bottle","material":"wool","price":"43.72","department":"Baby, Kids & Music","color":"blue","promotionCode":"GoodPromo368049"}'
@@ -232,7 +232,7 @@ All HTTP methods are supported. You can use http or https for your requests.
    method: 'DELETE',
    url: 'https://feku-json1.p.rapidapi.com/api/v1/products/1',
    headers: {
-   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+   'X-RapidAPI-Key': 'YOUR_API_KEY',
    'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
    }
    };
@@ -264,7 +264,7 @@ All HTTP methods are supported. You can use http or https for your requests.
    url: 'https://feku-json1.p.rapidapi.com/api/v1/products',
    params: {pageNumber: '0', pageSize: '5', sortBy: 'id', sortDir: 'asc'},
    headers: {
-   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
+   'X-RapidAPI-Key': 'YOUR_API_KEY',
    'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
    }
    };
