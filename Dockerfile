@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Stage 2: Create the final Docker image
-FROM adoptopenjdk:17-jre
+FROM openjdk:17-jre
 
 WORKDIR /app
 
