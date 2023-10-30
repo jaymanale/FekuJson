@@ -1,27 +1,30 @@
 
 # Feku Json
-
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-
+<p>
+  <img alt="Github: JayManale" src="https://img.shields.io/github/last-commit/jaymanale/FekuJson" />
+</p>
 
 Free Simple fake API for Testing and Prototyping.
+
+![FekuJson](https://github.com/jaymanale/FekuJson/assets/5653906/86817329-2483-4575-ae65-9c2c5e8f5e47)
+
 
 ## When to use
 Feku Json is a free online REST API that you can use whenever you need some fake data to test things locally.
 
-## Demo
+## Postman API
 
-Let go to [Rapid API](https://rapidapi.com/jaymanale29/api/feku-json1/)
+Let go to [API](https://documenter.getpostman.com/view/305770/2s93eSabYH)
 
 
 ## Resources
-Feku Json comes with a set of 2 resources:
+Feku Json comes with a set of 3 resources:
 
-[/users](https://rapidapi.com/jaymanale29/api/feku-json1) - 10 users
+[/users](https://documenter.getpostman.com/view/305770/2s93eSabYH#31f128f2-1cc0-4a42-9887-b3c84f0ea1e5) - 10 users
 
-[/products](https://rapidapi.com/jaymanale29/api/feku-json1) - 50 Products
+[/products](https://documenter.getpostman.com/view/305770/2s93eSabYH#47ad5018-e3d7-45f8-ba43-ef08f7694835) - 50 Products
 
-[/books](https://rapidapi.com/jaymanale29/api/feku-json1) - 100 books
+[/books](https://documenter.getpostman.com/view/305770/2s93eSabYH#890178a2-a735-4133-bae3-866cc1969068) - 100 books
 
 ## Parameters
 
@@ -35,22 +38,19 @@ Feku Json comes with a set of 2 resources:
 ## Routes
 All HTTP methods are supported. You can use http or https for your requests.
 
-1. GET    &emsp;&emsp; &emsp;    [/products](https://fekujson.herokuapp.com/api/v1/products)
+1. GET    &emsp;&emsp; &emsp;    [/products](https://documenter.getpostman.com/view/305770/2s93eSabYH#47ad5018-e3d7-45f8-ba43-ef08f7694835)
 
     Request :
      ```yaml
-     const options = {
-        method: 'GET',
-        headers: {
-        'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-        'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-    }
+     var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
     };
-    
-        fetch('https://feku-json1.p.rapidapi.com/api/v1/products', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+      
+    fetch("https://fekujson-production.up.railway.app/api/v1/products", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
      ```
     Response :
     ```json
@@ -155,23 +155,20 @@ All HTTP methods are supported. You can use http or https for your requests.
    }
     ```
 
-2. GET    &emsp;&emsp;&emsp;    [/products/1](https://fekujson.herokuapp.com/api/v1/products/1)
+2. GET    &emsp;&emsp;&emsp;    [/products/1](https://documenter.getpostman.com/view/305770/2s93eSabYH#104e97fc-e1c8-42ea-bef6-f20743739db0)
 
     Request :
     
      ```yaml
-     const options = {
-     method: 'GET',
-     headers: {
-       'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-       'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-     }
-    };
-    
-       fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
-       .then(response => response.json())
-       .then(response => console.log(response))
-       .catch(err => console.error(err));
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+   };
+   
+   fetch("https://fekujson-production.up.railway.app/api/v1/products/10", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
      ```
     Response :
     
@@ -187,93 +184,76 @@ All HTTP methods are supported. You can use http or https for your requests.
     }
     ```
 
-3. PUT    &emsp;&emsp;&emsp;     /products/1
+3. PUT    &emsp;&emsp;&emsp;     [/products/1](https://documenter.getpostman.com/view/305770/2s93eSabYH#30669c92-cb42-41b7-bf90-7625824432de)
 
     Request :
     ```yaml
-     const options = {
-     method: 'PUT',
-     headers: {
-       'content-type': 'application/json',
-       'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-       'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-     },
-     body: '{"productName":"Awesome Paper Bottle","material":"wool","price":"43.72","department":"Baby, Kids & Music","color":"blue","promotionCode":"GoodPromo368049"}'
-     };
-    
-       fetch('https://feku-json1.p.rapidapi.com/api/v1/products/1', options)
-       .then(response => response.json())
-       .then(response => console.log(response))
-       .catch(err => console.error(err));
+    var raw = "{\r\n    \"productName\": \"Awesome Paper Bottle\",\r\n    \"material\": \"wool\",\r\n    \"price\": \"43.72\",\r\n    \"department\": \"Baby, Kids & Music\",\r\n    \"color\": \"blue\",\r\n    \"promotionCode\": \"GoodPromo368049\"\r\n}";
+
+   var requestOptions = {
+      method: 'PUT',
+      body: raw,
+      redirect: 'follow'
+   };
+   
+   fetch("https://fekujson-production.up.railway.app/api/v1/products/1", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
     ```
     
     Response :
     ```json
     {
-        "id": 1,
-        "productName": "Awesome Paper Bottle",
-        "material": "wool",
-        "price": "43.72",
-        "department": "Baby, Kids & Music",
-        "color": "blue",
-        "promotionCode": "GoodPromo368049"
-    }
+      "id": 1,
+      "productName": "Awesome Paper Bottle",
+      "material": "wool",
+      "price": "43.72",
+      "department": "Baby, Kids & Music",
+      "color": "blue",
+      "promotionCode": "GoodPromo368049"
+   }
     ```
 
 
-4. DELETE    &emsp;&emsp;&emsp;     /products/1
+4. DELETE    &emsp;&emsp;&emsp;     [/products/1](https://documenter.getpostman.com/view/305770/2s93eSabYH#80645b32-2a17-4a61-bda0-f808d93d2074)
 
       Request :
 
     ```yaml
-   const axios = require("axios");
-   
-   const options = {
-   method: 'DELETE',
-   url: 'https://feku-json1.p.rapidapi.com/api/v1/products/1',
-   headers: {
-   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-   'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-   }
+   var requestOptions = {
+      method: 'DELETE',
+      redirect: 'follow'
    };
    
-   axios.request(options).then(function (response) {
-   console.log(response.data);
-   }).catch(function (error) {
-   console.error(error);
-   });
+   fetch("https://fekujson-production.up.railway.app/api/v1/products/2", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
     ```
 
    Response :
 
     ```json
     {
-      "message":"Product with ID : 5 Deleted Successfully."  
+      "message":"Product with ID : 2 Deleted Successfully."  
     }
     ```
 
-5. GET (With Parameters)   &emsp;&emsp;&emsp;     /products/
+5. GET (With Parameters)   &emsp;&emsp;&emsp;     [/products/](https://documenter.getpostman.com/view/305770/2s93eSabYH#df9e31af-9d9e-40d5-b568-7104c07cdcb5)
   
    Request :
 
    ```yaml
-   const axios = require("axios");
-
-   const options = {
-   method: 'GET',
-   url: 'https://feku-json1.p.rapidapi.com/api/v1/products',
-   params: {pageNumber: '0', pageSize: '5', sortBy: 'id', sortDir: 'asc'},
-   headers: {
-   'X-RapidAPI-Key': '2548137a99msh3307ab54622080cp1504d8jsn53b20928f346',
-   'X-RapidAPI-Host': 'feku-json1.p.rapidapi.com'
-   }
+   var requestOptions = {
+       method: 'GET',
+       redirect: 'follow'
    };
    
-   axios.request(options).then(function (response) {
-   console.log(response.data);
-   }).catch(function (error) {
-   console.error(error);
-   });
+   fetch("https://fekujson-production.up.railway.app/api/v1/products/?sortBy=productName&sortDir=asc&pageNumber=1&pageSize=5", requestOptions)
+       .then(response => response.text())
+       .then(result => console.log(result))
+       .catch(error => console.log('error', error));
   
    ```
    Response :
