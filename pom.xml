@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot.app</groupId>
-	<artifactId>Mockify API</artifactId>
+	<artifactId>Mockify-API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Mockify API</name>s
+	<name>Mockify-API</name>s
 	<description> Free Mockify API for Testing and Prototyping.</description>
 	<properties>
 		<java.version>1.8</java.version>
