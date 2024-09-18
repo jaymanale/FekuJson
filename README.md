@@ -4,13 +4,13 @@
   <img alt="Github: JayManale" src="https://img.shields.io/github/last-commit/jaymanale/FekuJson" />
 </p>
 
-Free Simple fake API for Testing and Prototyping.
+Free Simple Mockify API for Testing and Prototyping.
 
 ![FekuJson](https://github.com/jaymanale/FekuJson/assets/5653906/86817329-2483-4575-ae65-9c2c5e8f5e47)
 
 
 ## When to use
-Feku Json is a free online REST API that you can use whenever you need some fake data to test things locally.
+Feku Json is a free online REST API that you can use whenever you need some Mocking data to test things locally.
 
 ## Postman API
 
