@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot.app</groupId>
-	<artifactId>fekuAPI</artifactId>
+	<artifactId>Mockify API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fekuAPI</name>
-	<description> Free Feku (Fake) API for Testing and Prototyping.</description>
+	<name>Mockify API</name>s
+	<description> Free Mockify API for Testing and Prototyping.</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -48,6 +48,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
@@ -60,6 +64,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>jayrammanale/${artifactId}:v2</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -68,6 +75,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.3</version>
+				<configuration>
+					<to>
+						<name>jayrammanale/${artifactId}:v3</name>
+					</to>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
