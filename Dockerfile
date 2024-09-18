@@ -15,7 +15,7 @@ FROM prasadlvi/openjdk-17-jre
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/fekuAPI-0.0.1-SNAPSHOT.jar ./app.jar
+COPY --from=build /app/target/Mockify-API-0.0.1-SNAPSHOT.jar ./app.jar
 
 # Expose the port your Spring Boot application listens on
 EXPOSE 8080
